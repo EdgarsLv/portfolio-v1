@@ -2,7 +2,9 @@
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
+    /* display: grid; */
     height: 100vh;
+    height: 100svh;
 
     .top {
         height: 80px;

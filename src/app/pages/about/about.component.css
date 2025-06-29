@@ -1,37 +1,57 @@
-.middle {
+.about-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 10% ;
+
+    .image {
+        justify-self: center;
+        align-self: center;
+        padding: 16px;
+    }
+
+    .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        height: 100%;
+        gap: 3rem;
+        padding: 24px;
 
-        .span-top {
-            margin-right: auto;
-            margin-left: 6px;
-            font-size: clamp(1rem, 2vw, 22px);
-            letter-spacing: clamp(0.2rem, 1vw, 0.5rem);
-            color: var(--text-main);
-            font-weight: 900;
+        .about-me {
+            
+            h3 {
+                font-size: 3rem;
+                font-weight: 900;
+                letter-spacing: 0.5rem;
+                text-transform: uppercase;
+                color: var(--text-color);
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 500;
+                text-align: justify;
+                color: var(--text-main);
+            }
         }
 
-        .span-middle {
-            color: var(--text-color);
-            font-size: clamp(3rem, 15vw, 13rem);
-            letter-spacing: clamp(0.5rem, 3vw, 2.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            /* line-height: 13rem; */
-        }
+        .experience {
+            h3 {
+                font-size: 3rem;
+                font-weight: 900;
+                letter-spacing: 0.5rem;
+                text-transform: uppercase;
+                color: var(--text-color);
+                margin-bottom: 1rem;
+            }
 
-        .span-bottom {
-            display: block;
-            text-align: end;
-            font-weight: 900;
-            margin-right: 36px;
-            font-size: clamp(1rem, 2vw, 22px);
-            letter-spacing: clamp(0.2rem, 1vw, 0.5rem);
-            color: var(--text-main);
+            p {
+                font-size: 14px;
+                font-weight: 500;
+                text-align: justify;
+                color: var(--text-main);
+            }
         }
     }
-
- 
+}
