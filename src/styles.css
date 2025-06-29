@@ -23,9 +23,9 @@
 .dark-theme {
     color-scheme: dark;
 
-    --bg-color: #193447;
-    --text-color: #fee583;
-    --text-main: #fff;
+    --bg-color: #282d2e;
+    --text-color: #ff4444;
+    --text-main: #ecf2f6;
 }
 
 body {

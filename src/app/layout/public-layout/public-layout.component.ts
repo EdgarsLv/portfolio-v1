@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,9 +8,9 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './public-layout.component.css',
 })
 export class PublicLayoutComponent implements OnInit, OnDestroy {
-  socialIconSize = 36;
+  socialIconSize = 24;
 
-  currentTime: string = '';
+  currentTime = signal<string>('');
   private timer: any;
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class PublicLayoutComponent implements OnInit, OnDestroy {
     const offset = -now.getTimezoneOffset() / 60;
     const gmtOffset = `GMT${offset >= 0 ? '+' : ''}${offset}`;
 
-    this.currentTime = `${timeStr} ${gmtOffset}`;
+    this.currentTime.set(`${timeStr} ${gmtOffset}`);
   }
 
   toggleTheme() {
