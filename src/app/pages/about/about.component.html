@@ -11,31 +11,30 @@
     <div class="about-me">
       <h3>About</h3>
       <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        I'm a software developer with a strong eye for detail and a passion for
+        writing clean, precise code. I actively keep up with the latest
+        technologies and continuously push myself to learn and grow. While I
+        enjoy all things frontend, I also work on backend development when
+        needed.
       </p>
     </div>
 
     <div class="experience">
       <h3>Experience</h3>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
+
+      <div class="icons">
+        @for (icon of icons; track $index) {
+        <div class="icon">
+          <img
+            [src]="'assets/icons/' + icon.icon + '.svg'"
+            [height]="iconSize"
+            [width]="iconSize"
+            [alt]="icon.name"
+          />
+          <span>{{ icon.name }}</span>
+        </div>
+        }
+      </div>
     </div>
   </div>
 </div>
