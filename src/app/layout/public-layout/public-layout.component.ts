@@ -47,6 +47,19 @@ export class PublicLayoutComponent implements OnInit, OnDestroy {
     }
   }
 
+  shareNative() {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: document.title,
+          text: 'Check this out!',
+          url: window.location.href,
+        })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing', error));
+    }
+  }
+
   ngOnDestroy() {
     clearInterval(this.timer);
   }
