@@ -2,8 +2,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 
-gsap.registerPlugin(SplitText);
-
 @Component({
   selector: 'app-home',
   imports: [],
@@ -11,44 +9,62 @@ gsap.registerPlugin(SplitText);
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements AfterViewInit {
-  @ViewChild('spanMiddle') spanMiddle!: ElementRef;
+  @ViewChild('edgarText') edgarText!: ElementRef;
   @ViewChild('lastLetter') lastLetter!: ElementRef;
   @ViewChild('spanTop') spanTop!: ElementRef;
   @ViewChild('spanBottom') spanBottom!: ElementRef;
 
   ngAfterViewInit() {
+    const split = new SplitText(this.edgarText.nativeElement, {
+      type: 'chars',
+    });
+    const letters = split.chars;
+
     const tl = gsap.timeline();
 
-    // Step 1: Animate EDGARS
-    tl.from([this.spanMiddle.nativeElement, this.lastLetter.nativeElement], {
-      y: 50,
+    // Animate EDGAR letters from left
+    tl.from(letters, {
+      y: -100,
       opacity: 0,
       duration: 1,
-      stagger: 0.2,
-      ease: 'power2.out',
+      ease: 'power4.out',
+      stagger: 0.1,
     });
 
-    // Step 2: Animate spanTop and spanBottom simultaneously
+    // Animate "S" from right
+    tl.from(
+      this.lastLetter.nativeElement,
+      {
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power4.out',
+      },
+      '-=0.5'
+    ); // slight overlap
+
+    // Step 3: Animate Portfolio by (drop from top)
     tl.from(
       this.spanTop.nativeElement,
       {
-        // y: -50,
+        y: -60,
         opacity: 0,
         duration: 0.8,
         ease: 'power2.out',
       },
-      '-=0.2'
-    ); // slight overlap
+      '<'
+    ); // '<' = same time as next one
 
+    // Step 4: Animate PUCENS (rise from bottom)
     tl.from(
       this.spanBottom.nativeElement,
       {
-        // y: 50,
+        y: 60,
         opacity: 0,
         duration: 0.8,
         ease: 'power2.out',
       },
-      '-=0.2'
-    ); // '<' means start at same time as previous
+      '<'
+    ); // also same time
   }
 }

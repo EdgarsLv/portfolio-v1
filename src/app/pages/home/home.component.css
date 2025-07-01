@@ -4,8 +4,10 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+        overflow: hidden;
 
         .span-top {
+            display: inline-block;
             margin-right: auto;
             text-transform: uppercase;
             margin-left: clamp(0px, 1%, 6px);
@@ -38,4 +40,7 @@
         }
     }
 
- 
+ p span {
+  display: inline-block; 
+  white-space: pre;
+}
