@@ -12,7 +12,7 @@ type Icon = {
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
-  iconSize = 36;
+  iconSize = 20;
 
   icons: Icon[] = [
     { icon: 'angular', name: 'Angular' },
