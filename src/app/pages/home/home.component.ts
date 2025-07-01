@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
+import SplitText from 'gsap/SplitText';
+
+gsap.registerPlugin(SplitText);
 
 @Component({
   selector: 'app-home',
@@ -29,23 +32,23 @@ export class HomeComponent implements AfterViewInit {
     tl.from(
       this.spanTop.nativeElement,
       {
-        y: -50,
+        // y: -50,
         opacity: 0,
         duration: 0.8,
         ease: 'power2.out',
       },
-      '-=0.5'
+      '-=0.2'
     ); // slight overlap
 
     tl.from(
       this.spanBottom.nativeElement,
       {
-        y: 50,
+        // y: 50,
         opacity: 0,
         duration: 0.8,
         ease: 'power2.out',
       },
-      '<'
+      '-=0.2'
     ); // '<' means start at same time as previous
   }
 }
