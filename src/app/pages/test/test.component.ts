@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
 
 @Component({
   selector: 'app-test',
@@ -29,6 +27,14 @@ export class TestComponent {
       '-=0.5'
     );
     tl.to('.spinner-container', { opacity: 0, duration: 0.5, delay: 0.5 });
+    tl.to(
+      '.loader-text',
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      '<'
+    );
 
     tl.to('.loader', {
       scaleX: window.innerWidth < 960 ? 0 : 1,

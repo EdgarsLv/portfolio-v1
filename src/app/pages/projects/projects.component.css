@@ -1,6 +1,8 @@
 .projects-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: calc(100svh - 160px);
+    align-items: center;
     padding: 0 10%;
     margin-top: 32px;
 
@@ -18,7 +20,8 @@
                 font-weight: 900;
                 letter-spacing: 0.5rem;
                 text-transform: uppercase;
-                color: var(--text-color);
+                /* color: var(--text-color); */
+                color: #e69c4830;
                 margin-bottom: 0.5rem;
             }
 
@@ -72,12 +75,6 @@
     }
 }
 
-.text {
-  position: absolute;
-  font-size: 15rem;
-  font-weight: 900;
-  top: 35%;
-  left: 50%;
-  color: var(--text-color);
-  text-transform: uppercase;
+p {
+    color: #ffffff20 !important;
 }

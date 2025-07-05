@@ -11,23 +11,60 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class ProjectsComponent {
   ngAfterViewInit(): void {
-    //   const targets = document.querySelectorAll('.text');
-    //   gsap.set(targets, { xPercent: -50 });
-    //   let dur = 0.5;
-    //   let hold = 0.25;
-    //   targets.forEach((obj, i) => {
-    //     let tl = gsap.timeline({
-    //       delay: dur * i + hold * i,
-    //       repeat: -1,
-    //       repeatDelay: (targets.length - 1) * (dur + hold) - dur,
-    //       defaults: {
-    //         ease: 'none',
-    //         duration: dur,
-    //       },
-    //     });
-    //     tl.from(obj, { yPercent: -100, opacity: 0 });
-    //     tl.to(obj, { yPercent: 100, opacity: 0 }, '+=' + hold);
-    //   });
-    // }
+    const firstMessage = SplitText.create('.first-message', { type: 'words' });
+    const secondMessage = SplitText.create('.second-message', {
+      type: 'words',
+    });
+    const thirdMessage = SplitText.create('.third-message', {
+      type: 'words',
+    });
+    const firstSubtitle = SplitText.create('h3', {
+      type: 'chars',
+    });
+
+    gsap.to(firstSubtitle.chars, {
+      color: 'var(--text-color)',
+      ease: 'power1.in',
+      stagger: 0.15,
+    });
+
+    gsap.to(firstMessage.words, {
+      color: 'var(--text-main)',
+      ease: 'power1.in',
+      stagger: 0.2,
+      // scrollTrigger: {
+      //   trigger: '.content-1',
+      //   start: '30% 30%',
+      //   end: '80% 40%',
+      //   scrub: true,
+      //   markers: true,
+      // },
+    });
+
+    gsap.to(secondMessage.words, {
+      color: 'var(--text-main)',
+      ease: 'power1.in',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.content-2',
+        start: 'top center',
+        end: 'bottom 80%',
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    gsap.to(thirdMessage.words, {
+      color: 'var(--text-main)',
+      ease: 'power1.in',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.content-3',
+        start: 'top center',
+        end: 'bottom 90%',
+        scrub: true,
+        markers: true,
+      },
+    });
   }
 }
