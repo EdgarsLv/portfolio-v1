@@ -15,17 +15,17 @@
 .light-theme {
     color-scheme: light;
 
-    --bg-color: #f6f6f6;
-    --text-color: #0c516a;
-    --text-main: #000;
+    --bg-color: #def5fd;
+    --text-color: #e13031;
+    --text-main: #282346;
 }
 
 .dark-theme {
     color-scheme: dark;
 
-    --bg-color: #282d2e;
-    --text-color: #ff4444;
-    --text-main: #ecf2f6;
+    --bg-color: #242a34;
+    --text-color: #e69b48;
+    --text-main: #f8f9f9;
 }
 
 body {

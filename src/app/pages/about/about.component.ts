@@ -100,10 +100,12 @@ export class AboutComponent implements AfterViewInit {
 
   private myAnimation(): void {
     const aboutMeSplit = new SplitText(this.aboutme.nativeElement, {
-      type: 'chars',
+      type: 'lines',
+      mask: 'lines',
     });
     const experienceSplit = new SplitText(this.experience.nativeElement, {
-      type: 'chars',
+      type: 'lines',
+      mask: 'lines',
     });
     const aboutTextSplit = new SplitText(this.aboutText.nativeElement, {
       type: 'lines',
@@ -114,8 +116,9 @@ export class AboutComponent implements AfterViewInit {
 
     const tl = gsap.timeline();
 
-    tl.from(aboutMeSplit.chars, {
-      x: -50,
+    tl.from(aboutMeSplit.lines, {
+      rotationX: -10,
+      transformOrigin: '50% 50% -160px',
       opacity: 0,
       duration: 1,
       ease: 'power4.out',
@@ -136,9 +139,10 @@ export class AboutComponent implements AfterViewInit {
     );
 
     tl.from(
-      experienceSplit.chars,
+      experienceSplit.lines,
       {
-        x: -50,
+        rotationX: -10,
+        transformOrigin: '50% 50% -160px',
         opacity: 0,
         duration: 1,
         ease: 'power4.out',

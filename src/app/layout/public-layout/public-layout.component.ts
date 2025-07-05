@@ -9,10 +9,7 @@ import {
 } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { gsap } from 'gsap';
-import CustomEase from 'gsap/CustomEase';
 import { LoaderService } from '../../services/loader.service';
-
-CustomEase.create('hop', '0.9, 0, 0.1, 1');
 
 @Component({
   selector: 'app-public-layout',
@@ -38,42 +35,56 @@ export class PublicLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    const tl = gsap.timeline({ delay: 0.3, defaults: { ease: 'hop' } });
-    const counts = document.querySelectorAll('.count');
-    counts.forEach((count, index) => {
-      const digits = count.querySelectorAll('.digit h1');
-      tl.to(digits, { y: '0%', duration: 0.5, stagger: 0.075 }, index * 1);
-      if (index < counts.length) {
-        tl.to(
-          digits,
-          { y: '-100%', duration: 0.5, stagger: 0.075 },
-          index * 1 + 1
-        );
+    // this.startLoader();
+    // const tl = gsap.timeline({ delay: 0.3 });
+    // gsap.to('.count', { opacity: 0, delay: 3.5, duration: 0.5 });
+    // gsap.to('.spinner-container', { opacity: 0, delay: 3.5, duration: 0.5 });
+    // tl.to('.pre-loader', {
+    //   scaleX: window.innerWidth < 960 ? 0.9 : 0,
+    //   scaleY: window.innerWidth < 960 ? 0.25 : 0,
+    //   ease: 'power1.inOut',
+    //   duration: 1.5,
+    //   delay: 4.5,
+    // });
+    // const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+    // const targetText = 'EDGARS';
+    // const spans = document.querySelectorAll('.scramble-text .char');
+    // spans.forEach((span, i) => {
+    //   const originalChar = targetText[i];
+    //   let interval: any;
+    //   const scrambleDuration = gsap.utils.random(0.8, 2); // different duration per letter
+    //   const scrambleSpeed = 0.05; // time between char changes
+    //   interval = setInterval(() => {
+    //     const randomChar = chars[Math.floor(Math.random() * chars.length)];
+    //     span.textContent = randomChar;
+    //   }, scrambleSpeed * 1000);
+    //   // After delay, reveal correct letter
+    //   gsap.delayedCall(scrambleDuration, () => {
+    //     clearInterval(interval);
+    //     span.textContent = originalChar;
+    //   });
+    // });
+  }
+
+  //   onStart: () => {
+  //     this.loaderService.finish();
+  //   },
+
+  private startLoader() {
+    let counterElement = document.querySelector('.count p');
+    let currentValue = 0;
+
+    function updateCounter() {
+      if (currentValue < 100) {
+        let increment = Math.floor(Math.random() * 10 + 1);
+        currentValue = Math.min(currentValue + increment, 100);
+        counterElement!.textContent = currentValue.toString();
+
+        let delay = Math.floor(Math.random() * 200) + 25;
+        setTimeout(updateCounter, delay);
       }
-    });
-    tl.to('.spinner', { opacity: 0, duration: 0.3 });
-    tl.to('.word h1', { y: '0%', opacity: 1, duration: 1 }, '<');
-    tl.to('.divider', {
-      scaleY: '100%',
-      duration: 1,
-      onComplete: () => {
-        gsap.to('.divider', { opacity: 0, duration: 0.4, delay: 0.3 });
-      },
-    });
-    tl.to('#word-1 h1', { y: '100%', opacity: 0, duration: 1, delay: 0.3 });
-    tl.to('#word-2 h1', { y: '-100%', opacity: 0, duration: 1 }, '<');
-    tl.to('.block', {
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
-      duration: 1,
-      stagger: 0.1,
-      delay: 0.75,
-      onStart: () => {
-        this.loaderService.finish();
-      },
-    });
-    tl.to('.loader', {
-      display: 'none',
-    });
+    }
+    updateCounter();
   }
 
   updateTime() {

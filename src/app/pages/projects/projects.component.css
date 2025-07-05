@@ -70,7 +70,14 @@
             display: none;
         }
     }
+}
 
-
-
+.text {
+  position: absolute;
+  font-size: 15rem;
+  font-weight: 900;
+  top: 35%;
+  left: 50%;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
