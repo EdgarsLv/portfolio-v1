@@ -20,8 +20,8 @@
                 font-weight: 900;
                 letter-spacing: 0.5rem;
                 text-transform: uppercase;
-                /* color: var(--text-color); */
-                color: #e69c4830;
+                color: var(--text-color);
+                /* color: #e69c4830; */
                 margin-bottom: 0.5rem;
             }
 
@@ -77,4 +77,19 @@
 
 p {
     color: #ffffff20 !important;
+}
+
+.bounce-word {
+  font-size: clamp(4.5rem, 15vw, 13rem);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  
+}
+
+.bounce-word .char {
+ display: inline-block;
+  transform-origin: center center;
+  color: var(--text-color);
 }

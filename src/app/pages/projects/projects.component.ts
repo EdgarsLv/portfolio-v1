@@ -18,15 +18,15 @@ export class ProjectsComponent {
     const thirdMessage = SplitText.create('.third-message', {
       type: 'words',
     });
-    const firstSubtitle = SplitText.create('h3', {
-      type: 'chars',
-    });
+    // const firstSubtitle = SplitText.create('h3', {
+    //   type: 'chars',
+    // });
 
-    gsap.to(firstSubtitle.chars, {
-      color: 'var(--text-color)',
-      ease: 'power1.in',
-      stagger: 0.15,
-    });
+    // gsap.to(firstSubtitle.chars, {
+    //   color: 'var(--text-color)',
+    //   ease: 'power1.in',
+    //   stagger: 0.15,
+    // });
 
     gsap.to(firstMessage.words, {
       color: 'var(--text-main)',
@@ -50,7 +50,6 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 80%',
         scrub: true,
-        markers: true,
       },
     });
 
@@ -63,8 +62,31 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 90%',
         scrub: true,
-        markers: true,
       },
+    });
+
+    const chars = document.querySelectorAll('.bounce-word .char');
+
+    const waveTween = gsap.to(chars, {
+      scale: 0.9,
+      duration: 1,
+      ease: 'sine.inOut',
+      stagger: {
+        each: 0.15,
+        repeat: -1,
+        yoyo: true,
+      },
+      paused: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.bounce-word',
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: () => waveTween.play(),
+      onLeave: () => waveTween.pause(),
+      onEnterBack: () => waveTween.play(),
+      onLeaveBack: () => waveTween.pause(),
     });
   }
 }
