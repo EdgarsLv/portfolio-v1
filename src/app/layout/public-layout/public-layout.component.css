@@ -6,7 +6,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 24px;
+        padding: 0 16px;
         color: var(--text-color);
         z-index: 10;
         

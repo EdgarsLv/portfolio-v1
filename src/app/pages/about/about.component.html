@@ -15,8 +15,17 @@
 
   <div class="content">
     <div class="about-me">
-      <h3 #aboutme>About</h3>
-      <p #aboutText>
+      <h3>About</h3>
+
+      <div class="image-mobile">
+        <img
+          width="100%"
+          src="assets/images/portfolio.jpg"
+          alt="Portfolio image"
+        />
+      </div>
+
+      <p>
         I'm a software developer with a strong eye for detail and a passion for
         writing clean, precise code. I actively keep up with the latest
         technologies and continuously push myself to learn and grow. While I
@@ -26,11 +35,11 @@
     </div>
 
     <div class="experience">
-      <h3 #experience>Experience</h3>
+      <h3>Experience</h3>
 
       <div class="icons">
         @for (icon of icons; track $index) {
-        <div class="icon" #iconEl>
+        <div class="icon">
           <img
             [src]="'assets/icons/' + icon.icon + '.svg'"
             [height]="iconSize"

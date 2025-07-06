@@ -5,6 +5,7 @@
     align-items: center;
     height: calc(100svh - 120px);
     background-color: var(--bg-color);
+    margin-bottom: 60px;
 
     p {
         font-size: clamp(1rem, 2vw, 22px);
@@ -43,61 +44,57 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 0 10%;
+    margin-bottom: 100px;
+
+    .image {
+        align-self: flex-start;
+        margin: 8px 24px;
+    }
+
+    .image-mobile {
+        display: none;
+    }
 
     @media  (max-width: 900px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         padding: 0;
 
-        .image {
-            justify-self: center;
-        }
-    }
-
     .image {
-        align-self: center;
-        padding: 24px;
+        display: none;
     }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 24px;
+    .image-mobile {
+        align-self: flex-start;
+        margin: 24px 0;
+        display: block;
+    }
+}
 
-        .about-me {
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
             
-            h3 {
-                font-size: clamp(2rem, 3vw, 3rem);
-                font-weight: 900;
-                letter-spacing: 0.5rem;
-                text-transform: uppercase;
-                color: var(--text-color);
-                margin-bottom: 1rem;
-            }
-
-            p {
-                font-family: "IBM Plex Sans", sans-serif;
-                text-align: justify;
-                line-height: 1.4;
-                color: var(--text-main);
-            }
+        h3 {
+            font-size: clamp(2rem, 3vw, 3rem);
+            font-weight: 900;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            color: var(--text-color);
+            margin-bottom: 1rem;
         }
 
-        .experience {
-            h3 {
-                font-size: clamp(2rem, 3vw, 3rem);
-                font-weight: 900;
-                letter-spacing: 0.5rem;
-                text-transform: uppercase;
-                color: var(--text-color);
-                margin-bottom: 1rem;
-            }
+        p {
+            font-family: "IBM Plex Sans", sans-serif;
+            text-align: justify;
+            line-height: 1.4;
+            color: var(--text-main);
         }
     }
 }
+
 
 .icons {
      display: grid; 
