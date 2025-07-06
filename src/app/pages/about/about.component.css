@@ -1,4 +1,4 @@
-.intro-header {
+.section-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +27,7 @@
     }
 }
 
-.intro-title {
+.section-title {
             color: var(--text-color);
             font-size: clamp(4.5rem, 15vw, 13rem);
             letter-spacing: clamp(0.5rem, 3vw, 2.5rem);
