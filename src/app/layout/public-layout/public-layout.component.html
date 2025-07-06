@@ -1,47 +1,47 @@
-<main class="main">
-  <div class="top">
-    <div class="theme" (click)="toggleTheme()">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <g fill="none">
-          <path
-            fill="currentColor"
-            d="M2.75 12A9.25 9.25 0 0 0 12 21.25V2.75A9.25 9.25 0 0 0 2.75 12"
-          />
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M12 21.25a9.25 9.25 0 0 0 0-18.5m0 18.5a9.25 9.25 0 0 1 0-18.5m0 18.5V2.75"
-          />
-        </g>
-      </svg>
-    </div>
-    <div class="menu">
-      <a routerLink="/">Home</a>
-      <a routerLink="about">About</a>
-      <a routerLink="projects">Projects</a>
-      <a routerLink="test">Test</a>
-    </div>
+<header>
+  <div class="theme" (click)="toggleTheme()">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="36"
-      height="36"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
     >
-      <path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z" />
+      <g fill="none">
+        <path
+          fill="currentColor"
+          d="M2.75 12A9.25 9.25 0 0 0 12 21.25V2.75A9.25 9.25 0 0 0 2.75 12"
+        />
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M12 21.25a9.25 9.25 0 0 0 0-18.5m0 18.5a9.25 9.25 0 0 1 0-18.5m0 18.5V2.75"
+        />
+      </g>
     </svg>
   </div>
-
-  <div class="outlet">
-    <router-outlet />
+  <div class="menu">
+    <a routerLink="/">Home</a>
+    <a routerLink="about">About</a>
+    <a routerLink="projects">Projects</a>
+    <a routerLink="test">Test</a>
   </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="36"
+    viewBox="0 0 24 24"
+  >
+    <path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z" />
+  </svg>
+</header>
 
+<main>
+  <router-outlet />
+</main>
+
+<footer>
   <div class="bottom">
     <div class="social">
       <a
@@ -165,7 +165,7 @@
       </p>
     </div>
   </div>
-</main>
+</footer>
 
 <!-- <div class="pre-loader">
   <div class="spinner-container">

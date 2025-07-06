@@ -1,17 +1,4 @@
-.main {
-    position: relative;
-    background-color: var(--bg-color);
-    /* display: flex;
-    flex-direction: column; */
-    display: grid;
-    grid-template-rows: 1fr auto;
-    height: 100vh;
-    height: 100svh;
-    padding-top: 60px;
-
-    
-
-    .top {
+header {
         position: fixed;
         top: 0;
         width: 100%;
@@ -21,10 +8,8 @@
         align-items: center;
         padding: 0 24px;
         color: var(--text-color);
+        z-index: 10;
         
-
-        /* background-color: white;
-        box-shadow: 0 10px 25px -5px #b7bcbd55; */
 
         .theme {
             color: var(--text-color);
@@ -56,11 +41,22 @@
         }
     }
 
-    .outlet {
-        height: 100%;
-    }
 
-    .bottom {
+main {
+    position: relative;
+    min-height: calc(100vh - 120px); 
+    min-height: calc(100svh - 120px); 
+    margin-inline: 10%;
+    margin-top: 60px;
+
+    @media (max-width: 900px) {
+        margin-inline: 1rem;
+    }
+    
+}
+
+footer {
+     .bottom {
         height: 60px;
         margin-top: auto;
         padding-left: 24px;

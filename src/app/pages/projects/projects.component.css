@@ -1,3 +1,44 @@
+.projects-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100svh - 120px);
+    background-color: var(--bg-color);
+
+    p {
+        font-size: clamp(1rem, 2vw, 22px);
+        letter-spacing: clamp(0.2rem, 1vw, 0.5rem);
+        color: var(--text-main);
+        font-weight: 900;
+        text-transform: uppercase;
+        width: 100%;
+
+        &:first-of-type {
+            text-align: start;
+        }
+        &:last-of-type {
+            text-align: end;
+
+            span {
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+.projects-title {
+    color: var(--text-color);
+    font-size: clamp(4.5rem, 15vw, 13rem);
+    letter-spacing: clamp(0.5rem, 3vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+
+    span {
+        letter-spacing: 0;
+    }
+}
+
 .projects-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -73,23 +114,27 @@
             display: none;
         }
     }
+
+    p {
+        color: #f8f9f931 !important;
+    }
 }
 
-p {
-    color: #ffffff20 !important;
-}
 
 .bounce-word {
-  font-size: clamp(4.5rem, 15vw, 13rem);
-  font-weight: 900;
-  display: flex;
-  justify-content: center;
-  white-space: nowrap;
-  
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .bounce-word .char {
- display: inline-block;
-  transform-origin: center center;
-  color: var(--text-color);
+    display: inline-block;
+    transform-origin: center;
+    color: var(--text-color);
+}
+
+.spacing {
+    margin-left: 1rem;
 }

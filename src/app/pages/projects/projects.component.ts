@@ -18,27 +18,17 @@ export class ProjectsComponent {
     const thirdMessage = SplitText.create('.third-message', {
       type: 'words',
     });
-    // const firstSubtitle = SplitText.create('h3', {
-    //   type: 'chars',
-    // });
-
-    // gsap.to(firstSubtitle.chars, {
-    //   color: 'var(--text-color)',
-    //   ease: 'power1.in',
-    //   stagger: 0.15,
-    // });
 
     gsap.to(firstMessage.words, {
       color: 'var(--text-main)',
       ease: 'power1.in',
       stagger: 0.2,
-      // scrollTrigger: {
-      //   trigger: '.content-1',
-      //   start: '30% 30%',
-      //   end: '80% 40%',
-      //   scrub: true,
-      //   markers: true,
-      // },
+      scrollTrigger: {
+        trigger: '.content-1',
+        start: 'top center',
+        end: 'bottom 80%',
+        scrub: true,
+      },
     });
 
     gsap.to(secondMessage.words, {
@@ -50,6 +40,7 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 80%',
         scrub: true,
+        // markers: true,
       },
     });
 
@@ -68,8 +59,9 @@ export class ProjectsComponent {
     const chars = document.querySelectorAll('.bounce-word .char');
 
     const waveTween = gsap.to(chars, {
-      scale: 0.9,
-      duration: 1,
+      scale: 0.7,
+      color: '#995911',
+      duration: 1.5,
       ease: 'sine.inOut',
       stagger: {
         each: 0.15,
