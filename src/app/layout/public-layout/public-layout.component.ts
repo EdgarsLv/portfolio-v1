@@ -8,12 +8,12 @@ import {
   ViewChild,
 } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { gsap } from 'gsap';
 import { LoaderService } from '../../services/loader.service';
+import { LoaderScreenComponent } from '../../components/loader-screen/loader-screen.component';
 
 @Component({
   selector: 'app-public-layout',
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule, LoaderScreenComponent],
   templateUrl: './public-layout.component.html',
   styleUrl: './public-layout.component.css',
 })
@@ -34,58 +34,11 @@ export class PublicLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     document.body.classList.add('dark-theme');
   }
 
-  ngAfterViewInit(): void {
-    // this.startLoader();
-    // const tl = gsap.timeline({ delay: 0.3 });
-    // gsap.to('.count', { opacity: 0, delay: 3.5, duration: 0.5 });
-    // gsap.to('.spinner-container', { opacity: 0, delay: 3.5, duration: 0.5 });
-    // tl.to('.pre-loader', {
-    //   scaleX: window.innerWidth < 960 ? 0.9 : 0,
-    //   scaleY: window.innerWidth < 960 ? 0.25 : 0,
-    //   ease: 'power1.inOut',
-    //   duration: 1.5,
-    //   delay: 4.5,
-    // });
-    // const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
-    // const targetText = 'EDGARS';
-    // const spans = document.querySelectorAll('.scramble-text .char');
-    // spans.forEach((span, i) => {
-    //   const originalChar = targetText[i];
-    //   let interval: any;
-    //   const scrambleDuration = gsap.utils.random(0.8, 2); // different duration per letter
-    //   const scrambleSpeed = 0.05; // time between char changes
-    //   interval = setInterval(() => {
-    //     const randomChar = chars[Math.floor(Math.random() * chars.length)];
-    //     span.textContent = randomChar;
-    //   }, scrambleSpeed * 1000);
-    //   // After delay, reveal correct letter
-    //   gsap.delayedCall(scrambleDuration, () => {
-    //     clearInterval(interval);
-    //     span.textContent = originalChar;
-    //   });
-    // });
-  }
+  ngAfterViewInit(): void {}
 
   //   onStart: () => {
   //     this.loaderService.finish();
   //   },
-
-  private startLoader() {
-    let counterElement = document.querySelector('.count p');
-    let currentValue = 0;
-
-    function updateCounter() {
-      if (currentValue < 100) {
-        let increment = Math.floor(Math.random() * 10 + 1);
-        currentValue = Math.min(currentValue + increment, 100);
-        counterElement!.textContent = currentValue.toString();
-
-        let delay = Math.floor(Math.random() * 200) + 25;
-        setTimeout(updateCounter, delay);
-      }
-    }
-    updateCounter();
-  }
 
   updateTime() {
     const now = new Date();

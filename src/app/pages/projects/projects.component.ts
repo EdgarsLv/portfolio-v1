@@ -81,5 +81,15 @@ export class ProjectsComponent {
       onEnterBack: () => waveTween.play(),
       onLeaveBack: () => waveTween.pause(),
     });
+
+    // document.querySelectorAll('.panel').forEach((panel) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+    //     start: 'top top',
+    //     pin: true,
+    //     pinSpacing: false,
+    //     scrub: true,
+    //   });
+    // });
   }
 }

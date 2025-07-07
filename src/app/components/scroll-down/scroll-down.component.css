@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  z-index: 999;
+  z-index: 50;
 }
 
 .arrow-container {
