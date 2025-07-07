@@ -2,10 +2,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [ScrollDownComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })

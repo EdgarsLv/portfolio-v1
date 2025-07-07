@@ -9,6 +9,10 @@ header {
         padding: 0 16px;
         color: var(--text-color);
         z-index: 10;
+     
+          backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px); 
+        background-color: var(--backdrop-color);
         
 
         .theme {

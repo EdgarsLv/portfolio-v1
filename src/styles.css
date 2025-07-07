@@ -18,6 +18,7 @@
     --bg-color: #def5fd;
     --text-color: #e13031;
     --text-main: #282346;
+    --backdrop-color: #def5fd10;
 }
 
 .dark-theme {
@@ -26,6 +27,7 @@
     --bg-color: #242a34;
     --text-color: #e69b48;
     --text-main: #f8f9f9;
+    --backdrop-color: #242a3410;
 }
 
 body {

@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { LoaderService } from '../../services/loader.service';
+import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 
 type Icon = {
   icon: string;
@@ -10,7 +11,7 @@ type Icon = {
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [ScrollDownComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
@@ -19,8 +20,6 @@ export class AboutComponent implements AfterViewInit {
   icons: Icon[] = icons;
 
   constructor(private loaderService: LoaderService) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {}
 }
