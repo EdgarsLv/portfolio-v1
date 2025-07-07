@@ -1,0 +1,7 @@
+.theme {
+    color: var(--text-color);
+
+    :hover {
+        cursor: pointer;
+    }
+}
