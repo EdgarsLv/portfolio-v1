@@ -57,31 +57,6 @@ export class ProjectsComponent {
       },
     });
 
-    const chars = document.querySelectorAll('.bounce-word .char');
-
-    const waveTween = gsap.to(chars, {
-      scale: 0.7,
-      color: '#995911',
-      duration: 1.5,
-      ease: 'sine.inOut',
-      stagger: {
-        each: 0.15,
-        repeat: -1,
-        yoyo: true,
-      },
-      paused: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: '.bounce-word',
-      start: 'top bottom',
-      end: 'bottom top',
-      onEnter: () => waveTween.play(),
-      onLeave: () => waveTween.pause(),
-      onEnterBack: () => waveTween.play(),
-      onLeaveBack: () => waveTween.pause(),
-    });
-
     // document.querySelectorAll('.panel').forEach((panel) => {
     //   ScrollTrigger.create({
     //     trigger: panel,

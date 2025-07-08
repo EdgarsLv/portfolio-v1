@@ -9,6 +9,7 @@
     margin-bottom: 60px;
 
     p {
+        font-family: 'MyFont', sans-serif;
         font-size: clamp(1rem, 2vw, 22px);
         letter-spacing: clamp(0.2rem, 1vw, 0.5rem);
         color: var(--text-main);
@@ -23,6 +24,7 @@
             text-align: end;
 
             span {
+                font-family: 'MyFont', sans-serif;
                 letter-spacing: 0;
             }
         }
@@ -30,15 +32,19 @@
 }
 
 .section-title {
-            color: var(--text-color);
-            font-size: clamp(4.5rem, 15vw, 13rem);
-            letter-spacing: clamp(0.5rem, 3vw, 2.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
+    font-family: 'MyFont', sans-serif;
+    font-size: clamp(4.5rem, 15vw, 15rem);
+    letter-spacing: clamp(0.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--text-color);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 0.15em;
 
-            span {
-                letter-spacing: 0;
-            }
+    span {
+        font-family: 'MyFont', sans-serif;
+        letter-spacing: 0;
+    }
 }
 
 .about-container {
@@ -85,6 +91,7 @@
             text-transform: uppercase;
             color: var(--text-color);
             margin-bottom: 1rem;
+            font-family: 'MyFont', sans-serif;
         }
 
         p {
@@ -92,6 +99,7 @@
             text-align: justify;
             line-height: 1.4;
             color: var(--text-main);
+            font-family: 'MyFont', sans-serif;
         }
     }
 }

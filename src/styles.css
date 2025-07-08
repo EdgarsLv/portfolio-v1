@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'MyFont';
-  src: url('/assets/fonts/Digitalts.ttf') format('truetype');
+  src: url('/assets/fonts/Twilight.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +33,7 @@
     color-scheme: dark;
 
     --bg-color: #242a34;
-    --text-color: #e69b48;
+    --text-color: #ff4500;
     --text-main: #f8f9f9;
     --backdrop-color: #242a3410;
 }
