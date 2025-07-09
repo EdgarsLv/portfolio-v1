@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @font-face {
   font-family: 'MyFont';
   src: url('/assets/fonts/Twilight.ttf') format('truetype');
@@ -13,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: "Crimson Pro", serif;
 }
 
 :root {
@@ -23,13 +21,12 @@
 .light-theme {
     color-scheme: light;
 
-    /* --bg-color: #fefce1;
-    --text-color: #ff4500;
-    --text-main: #282346; */
     --bg-color: #f5f7fa;       
     --text-main: #1a1d23;      
     --text-color: #ff4500; 
     --backdrop-color: #def5fd10;
+
+    --arrow-color: #000;
 }
 
 .dark-theme {
@@ -39,6 +36,8 @@
     --text-color: #ff4500;
     --text-main: #f8f9f9;
     --backdrop-color: #242a3410;
+
+    --arrorw-color: #fff;
 }
 
 body {

@@ -19,8 +19,9 @@
 .arrow {
   width: 32px;
   height: 32px;
-  border-bottom: 4px solid white;
-  border-right: 4px solid white;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-color: var(--arrow-color);
   transform: rotate(45deg);
   animation: arrowBounce 1.5s infinite ease-in-out;
   opacity: 0.7;
@@ -46,7 +47,7 @@
 
 .scroll-text {
   font-size: 1rem;
-  color: white;
+  color: var(--arrow-color);
   opacity: 0.6;
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;

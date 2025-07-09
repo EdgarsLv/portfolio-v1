@@ -46,7 +46,7 @@ export class AboutComponent implements AfterViewInit {
         x: -row1Width,
         ease: 'none',
         repeat: -1,
-        duration: 60,
+        duration: 70,
         modifiers: {
           x: gsap.utils.unitize((x) => parseFloat(x) % row1Width),
         },
@@ -61,7 +61,7 @@ export class AboutComponent implements AfterViewInit {
         x: 0,
         ease: 'none',
         repeat: -1,
-        duration: 60,
+        duration: 55,
         modifiers: {
           x: gsap.utils.unitize((x) => parseFloat(x) % row2Width),
         },
