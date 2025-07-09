@@ -23,16 +23,19 @@
 .light-theme {
     color-scheme: light;
 
-    --bg-color: #def5fd;
-    --text-color: #e13031;
-    --text-main: #282346;
+    /* --bg-color: #fefce1;
+    --text-color: #ff4500;
+    --text-main: #282346; */
+    --bg-color: #f5f7fa;       
+    --text-main: #1a1d23;      
+    --text-color: #ff4500; 
     --backdrop-color: #def5fd10;
 }
 
 .dark-theme {
     color-scheme: dark;
 
-    --bg-color: #242a34;
+    --bg-color: #1a1d23;
     --text-color: #ff4500;
     --text-main: #f8f9f9;
     --backdrop-color: #242a3410;

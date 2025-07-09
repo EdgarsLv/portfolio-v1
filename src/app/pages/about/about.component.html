@@ -39,18 +39,26 @@
     <div class="experience">
       <h3>Experience</h3>
 
-      <div class="icons">
-        @for (icon of icons; track $index) {
-        <div class="icon">
-          <img
-            [src]="'assets/icons/' + icon.icon + '.svg'"
-            [height]="iconSize"
-            [width]="iconSize"
-            [alt]="icon.name"
-          />
-          <span>{{ icon.name }}</span>
+      <div class="marquee-wrapper">
+        <div class="marquee-row">
+          <div class="marquee-track row1">
+            @for (icon of iconsRow1; track $index) {
+            <app-tech-icon [icon]="icon" [iconSize]="iconSize" />
+            } @for (icon of iconsRow1; track $index) {
+            <app-tech-icon [icon]="icon" [iconSize]="iconSize" />
+            }
+          </div>
         </div>
-        }
+
+        <div class="marquee-row">
+          <div class="marquee-track row2">
+            @for (icon of iconsRow2; track $index) {
+            <app-tech-icon [icon]="icon" [iconSize]="iconSize" />
+            } @for (icon of iconsRow2; track $index) {
+            <app-tech-icon [icon]="icon" [iconSize]="iconSize" />
+            }
+          </div>
+        </div>
       </div>
     </div>
   </div>

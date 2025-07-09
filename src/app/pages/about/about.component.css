@@ -49,8 +49,8 @@
 
 .about-container {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
     margin-bottom: 100px;
 
     .image {
@@ -104,26 +104,24 @@
     }
 }
 
-
-.icons {
-     display: grid; 
-     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-     width: 100%;
-    gap: 8px;
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: hidden;
 }
 
-.icon {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px;
-    box-shadow: 0 0px 3px -1px rgba(0, 0, 0, 0.2);
-
-
-    span {
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        margin-left: 8px;
-        color: var(--text-main);
-    }
+.marquee-row {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
+
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+}
+

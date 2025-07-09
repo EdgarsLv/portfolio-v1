@@ -1,0 +1,15 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    box-shadow: 0 0px 3px -1px rgba(0, 0, 0, 0.2);
+
+
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 16px;
+        white-space: nowrap;
+        color: var(--text-main);
+    }
+}

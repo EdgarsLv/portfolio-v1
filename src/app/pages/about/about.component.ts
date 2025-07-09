@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { LoaderService } from '../../services/loader.service';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
+import { TechIconComponent } from '../../components/tech-icon/tech-icon.component';
 
 type Icon = {
   icon: string;
@@ -11,17 +12,71 @@ type Icon = {
 
 @Component({
   selector: 'app-about',
-  imports: [ScrollDownComponent],
+  imports: [ScrollDownComponent, TechIconComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
 export class AboutComponent implements AfterViewInit {
-  iconSize = 20;
+  iconSize = 40;
   icons: Icon[] = icons;
+
+  iconsRow1: Icon[] = [];
+  iconsRow2: Icon[] = [];
 
   constructor(private loaderService: LoaderService) {}
 
-  ngAfterViewInit(): void {}
+  ngOnInit() {
+    const shuffledIcons = this.shuffle(icons);
+    this.iconsRow1 = this.shuffle(shuffledIcons);
+    this.iconsRow2 = this.shuffle(shuffledIcons);
+  }
+
+  ngAfterViewInit(): void {
+    const row1Track = document.querySelector('.row1') as HTMLElement;
+    const row2Track = document.querySelector('.row2') as HTMLElement;
+
+    const row1Width = row1Track.offsetWidth / 2;
+    const row2Width = row2Track.offsetWidth / 2;
+
+    // Row 1 - left to right
+    gsap.fromTo(
+      row1Track,
+      { x: 0 },
+      {
+        x: -row1Width,
+        ease: 'none',
+        repeat: -1,
+        duration: 60,
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % row1Width),
+        },
+      }
+    );
+
+    // Row 2 - right to left
+    gsap.fromTo(
+      row2Track,
+      { x: -row2Width },
+      {
+        x: 0,
+        ease: 'none',
+        repeat: -1,
+        duration: 60,
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x) % row2Width),
+        },
+      }
+    );
+  }
+
+  private shuffle<T>(array: T[]): T[] {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
 }
 
 const icons = [
