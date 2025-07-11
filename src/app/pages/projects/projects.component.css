@@ -98,7 +98,7 @@ h4 {
     margin-bottom: 2rem;
     font-size: 22px;
     font-weight: 600;
-    color: #f8f9f931;
+    color: #f8f9f915;
 
     @media  (max-width: 900px) { 
         margin-bottom: 1rem;
@@ -110,7 +110,7 @@ p {
     text-align: justify;
     line-height: 1.5;
     margin-bottom: 2rem;
-    color: #f8f9f931;
+    color: #f8f9f915;
 }
 
 
@@ -146,8 +146,3 @@ a:hover::before {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
-
-/* .panel {
-    height: calc(100svh - 120px);
-    background: var(--bg-color); 
-} */

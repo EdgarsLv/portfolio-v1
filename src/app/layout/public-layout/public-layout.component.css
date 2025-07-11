@@ -24,7 +24,7 @@ header {
         text-transform: uppercase;
             
         a {
-            color: var(--text-color);
+            color: var(--text-main);
             text-decoration: none;
         }
 
@@ -41,7 +41,8 @@ main {
     min-height: calc(100vh - 60px); 
     min-height: calc(100svh - 60px); 
     background-color: var(--bg-color);
-    border-bottom: 1px solid rgb(104, 42, 1);
+    border-bottom: 1px solid;
+    border-color: var(--text-color);
     margin-top: 60px;
     margin-bottom: 136px;
 }

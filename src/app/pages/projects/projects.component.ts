@@ -27,8 +27,9 @@ export class ProjectsComponent {
       scrollTrigger: {
         trigger: '.content-1',
         start: 'top center',
-        end: 'bottom 80%',
+        end: 'bottom 70%',
         scrub: true,
+        // markers: true,
       },
     });
 
@@ -39,7 +40,7 @@ export class ProjectsComponent {
       scrollTrigger: {
         trigger: '.content-2',
         start: 'top center',
-        end: 'bottom 80%',
+        end: 'bottom 70%',
         scrub: true,
         // markers: true,
       },
@@ -52,8 +53,9 @@ export class ProjectsComponent {
       scrollTrigger: {
         trigger: '.content-3',
         start: 'top center',
-        end: 'bottom 90%',
+        end: 'bottom 75%',
         scrub: true,
+        // markers: true,
       },
     });
 

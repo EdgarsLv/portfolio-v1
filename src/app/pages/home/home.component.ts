@@ -10,6 +10,6 @@ import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.co
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements AfterViewInit {
-  public socialIconSize = 24;
+  public socialIconSize = 20;
   ngAfterViewInit() {}
 }
