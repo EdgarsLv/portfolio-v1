@@ -1,17 +1,28 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 import { SectionHeadingsComponent } from '../../components/section-headings/section-headings.component';
+import { DesktopImageComponent } from './components/desktop-image/desktop-image.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [ScrollDownComponent, SectionHeadingsComponent],
+  imports: [
+    ScrollDownComponent,
+    SectionHeadingsComponent,
+    DesktopImageComponent,
+  ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
 export class ProjectsComponent {
+  public isMobile = signal<boolean>(window.innerWidth < 900);
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile.set(window.innerWidth < 900);
+  }
+
   ngAfterViewInit(): void {
     const firstMessage = SplitText.create('.first-message', { type: 'words' });
     const secondMessage = SplitText.create('.second-message', {

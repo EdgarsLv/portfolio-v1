@@ -1,0 +1,22 @@
+:host {
+    align-self: center;
+}
+
+.image {
+    align-self: center;
+    margin: 8px 24px;
+}
+
+.image-reveal {
+  overflow: hidden;
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.9);
+  clip-path: inset(0 0 100% 0); 
+}
+
+.image-reveal img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

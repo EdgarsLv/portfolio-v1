@@ -14,13 +14,9 @@
       Frontend and Backend Development, Design, Idea.
     </h4>
 
-    <div class="mobile-image">
-      <img
-        width="100%"
-        src="/assets/images/home-black-black.png"
-        alt="Divi Tipi"
-      />
-    </div>
+    @if (isMobile()) {
+    <app-desktop-image srcImg="home-black-black.png" altText="Divi Tipi" />
+    }
 
     <p class="first-message">
       A feature-rich dating platform with real-time chat, typing indicators,
@@ -54,36 +50,24 @@
     </div>
   </div>
 
-  <div class="image">
-    <img
-      width="100%"
-      src="/assets/images/home-black-black.png"
-      alt="Divi Tipi"
-    />
-  </div>
+  @if (!isMobile()) {
+  <app-desktop-image srcImg="home-black-black.png" altText="Divi Tipi" />
+  }
 </div>
 
 <div class="section-container">
-  <div class="image">
-    <img
-      width="100%"
-      src="/assets/images/table-white-black.png"
-      alt="Fusion Ui"
-    />
-  </div>
+  @if (!isMobile()) {
+  <app-desktop-image srcImg="table-white-black.png" altText="Fusion Ui" />
+  }
 
   <div class="content content-2">
     <app-section-headings headingText="Ui Library" />
 
     <h4 class="subtitle2 second-message">Web Development, Design, Idea.</h4>
 
-    <div class="mobile-image">
-      <img
-        width="100%"
-        src="/assets/images/table-white-black.png"
-        alt="Fusion Ui"
-      />
-    </div>
+    @if (isMobile()) {
+    <app-desktop-image srcImg="table-white-black.png" altText="Fusion Ui" />
+    }
 
     <p class="second-message">
       I'm building this site using my own UI component library (published as an
@@ -124,9 +108,9 @@
 
     <h4 class="subtitle3 third-message">Development, Design, Idea.</h4>
 
-    <div class="mobile-image">
-      <img width="100%" src="/assets/images/npm.png" alt="Fusion Ui npm" />
-    </div>
+    @if (isMobile()) {
+    <app-desktop-image srcImg="npm.png" altText="Fusion Ui npm" />
+    }
 
     <p class="third-message">
       Responsive, type-safe Angular component library featuring a powerful Table
@@ -162,7 +146,7 @@
     </div>
   </div>
 
-  <div class="image">
-    <img width="100%" src="/assets/images/npm.png" alt="Fusion Ui npm" />
-  </div>
+  @if (!isMobile()) {
+  <app-desktop-image srcImg="npm.png" altText="Fusion Ui npm" />
+  }
 </div>

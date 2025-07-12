@@ -63,25 +63,6 @@
         grid-template-rows: 1fr auto;
         padding-inline: 1rem;
     }
-
-            
-    .mobile-image {
-        padding: 4px;
-        margin: 16px 0;
-
-        @media  (min-width: 900px) {
-            display: none;
-        }
-    }
-
-    .image {
-        align-self: flex-start;
-        margin: 8px 24px;
-
-        @media  (max-width: 900px) {
-            display: none;
-        }
-    }
 }
 
 h4 {
@@ -148,3 +129,5 @@ a:hover::before {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
+
+
