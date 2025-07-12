@@ -4,6 +4,7 @@ import SplitText from 'gsap/SplitText';
 import { LoaderService } from '../../services/loader.service';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 import { TechIconComponent } from '../../components/tech-icon/tech-icon.component';
+import { SectionHeadingsComponent } from '../../components/section-headings/section-headings.component';
 
 type Icon = {
   icon: string;
@@ -12,13 +13,12 @@ type Icon = {
 
 @Component({
   selector: 'app-about',
-  imports: [ScrollDownComponent, TechIconComponent],
+  imports: [ScrollDownComponent, TechIconComponent, SectionHeadingsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
 export class AboutComponent implements AfterViewInit {
   iconSize = 40;
-  icons: Icon[] = icons;
 
   iconsRow1: Icon[] = [];
   iconsRow2: Icon[] = [];
@@ -32,6 +32,33 @@ export class AboutComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // gsap.to('.heading span', {
+    //   scrollTrigger: {
+    //     trigger: '.heading',
+    //     start: 'top 80%',
+    //     toggleActions: 'play none none reverse',
+    //   },
+    //   y: 0,
+    //   duration: 1.5,
+    //   ease: 'power4.out',
+    // });
+
+    const firstMessage = SplitText.create('.first-message', {
+      type: 'words',
+    });
+
+    gsap.to(firstMessage.words, {
+      color: 'var(--text-main)',
+      ease: 'power1.in',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.about-me',
+        start: 'top center',
+        end: 'bottom 70%',
+        scrub: true,
+      },
+    });
+
     const row1Track = document.querySelector('.row1') as HTMLElement;
     const row2Track = document.querySelector('.row2') as HTMLElement;
 

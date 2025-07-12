@@ -82,21 +82,13 @@
     }
 }
 
-h3 {
-    font-size: clamp(2rem, 3vw, 3rem);
-    font-weight: 900;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    font-family: 'MyFont', sans-serif;
-}
-
 p {
-    font-size: 20px;
+    font-size: 16px;
     text-align: justify;
     line-height: 1.5;
-    color: var(--text-main);
+    text-transform: uppercase;
+    /* color: var(--text-main); */
+    color: #f8f9f915;
 }
 
 .marquee-wrapper {
@@ -120,3 +112,12 @@ p {
     width: fit-content;
 }
 
+.heading {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.heading span {
+  display: inline-block;
+  transform: translateY(100%);
+}

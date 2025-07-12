@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -9,4 +10,6 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class ThemeSwitcherComponent {
   public theme = inject(ThemeService);
+
+  ngAfterContentChecked(): void {}
 }

@@ -5,3 +5,25 @@
         cursor: pointer;
     }
 }
+
+.splash-icon {
+    padding: 14px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.splash-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--text-main);
+
+    mask-image: url('/assets/images/bg.png');
+    mask-size: cover;
+    mask-position: center;
+    transition: .2s ease;
+}

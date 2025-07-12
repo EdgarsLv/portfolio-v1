@@ -1,0 +1,12 @@
+h3 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+
+    span {
+        font-family: 'MyFont', sans-serif;
+    }
+}

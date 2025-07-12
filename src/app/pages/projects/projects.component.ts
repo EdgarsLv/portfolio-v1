@@ -3,10 +3,11 @@ import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
+import { SectionHeadingsComponent } from '../../components/section-headings/section-headings.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [ScrollDownComponent],
+  imports: [ScrollDownComponent, SectionHeadingsComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
@@ -29,7 +30,6 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 70%',
         scrub: true,
-        // markers: true,
       },
     });
 
@@ -42,7 +42,6 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 70%',
         scrub: true,
-        // markers: true,
       },
     });
 
@@ -55,7 +54,6 @@ export class ProjectsComponent {
         start: 'top center',
         end: 'bottom 75%',
         scrub: true,
-        // markers: true,
       },
     });
 
