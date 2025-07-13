@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
 
 @Component({
   selector: 'app-test',
@@ -9,7 +10,7 @@ import gsap from 'gsap';
 })
 export class TestComponent {
   ngAfterViewInit(): void {
-    const phrases = ['HELLO', 'WORLD', 'FROM', 'GSAP'];
+    const phrases = ['WELCOME', 'WELCOME', 'FROM', 'GSAP'];
     const scrambleElement = document.querySelector('.scramble');
     const timeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
 
