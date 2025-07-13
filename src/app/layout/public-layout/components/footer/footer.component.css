@@ -2,7 +2,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 160px;
+    height: 205px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--bg-color);
@@ -14,7 +14,7 @@ footer {
     @media (max-width: 900px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        height: 320px;
+        height: 520px;
     }
 }
 
@@ -48,6 +48,7 @@ footer {
 
 .info {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
@@ -55,7 +56,7 @@ footer {
     font-weight: 600;
     font-size: 1.2rem;
     color: var(--text-main);
-    padding: 16px;
+    padding-bottom:  16px;
     border: 1px solid #0095ff38;
 
     .location {
@@ -84,4 +85,12 @@ p {
 
 .share {
      border: 1px solid #0095ff38;
+     /* box-shadow: 0 0 10px -4px #0095ff38; */
+}
+
+.map-container {
+  height: 150px;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 0;
 }

@@ -4,11 +4,11 @@ main {
     min-height: calc(100svh - 60px); 
     background-color: var(--bg-color);
     margin-top: 60px;
-    margin-bottom: calc(160px + 32px);
+    margin-bottom: calc(205px + 32px);
     box-shadow: 0 4px 10px -4px #0095ff38;
 
     @media (max-width: 900px){
-        margin-bottom: 350px;
+        margin-bottom: calc(520px + 32px);
     }
 }
 
