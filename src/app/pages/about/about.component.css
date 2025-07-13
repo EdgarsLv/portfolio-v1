@@ -97,6 +97,7 @@ p {
     flex-direction: column;
     gap: 1.5rem;
     overflow: hidden;
+    padding-bottom: 32px;
 }
 
 .marquee-row {
