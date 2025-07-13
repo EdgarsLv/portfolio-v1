@@ -19,13 +19,15 @@ footer {
 }
 
 .social-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border: 1px solid #0095ff38;
-  padding: 16px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #0095ff38;
+    padding: 16px 0;
+    overflow: hidden;
 }
 
 .social-links a {
