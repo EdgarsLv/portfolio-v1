@@ -5,6 +5,10 @@
 .image {
     align-self: center;
     margin: 8px 24px;
+
+    @media  (max-width: 900px) {
+        margin: 8px 0px;
+    }
 }
 
 .image-reveal {

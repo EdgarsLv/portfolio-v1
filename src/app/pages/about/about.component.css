@@ -89,6 +89,7 @@ p {
     text-transform: uppercase;
     /* color: var(--text-main); */
     color: #f8f9f915;
+    /* opacity: 0; */
 }
 
 .marquee-wrapper {

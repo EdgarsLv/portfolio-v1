@@ -3,8 +3,9 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrambleTextPlugin from 'gsap/ScrambleTextPlugin';
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText, ScrollTrigger, ScrambleTextPlugin);
 
 @Component({
   selector: 'app-root',

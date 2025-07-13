@@ -32,30 +32,18 @@ export class AboutComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // gsap.to('.heading span', {
-    //   scrollTrigger: {
-    //     trigger: '.heading',
-    //     start: 'top 80%',
-    //     toggleActions: 'play none none reverse',
-    //   },
-    //   y: 0,
-    //   duration: 1.5,
-    //   ease: 'power4.out',
-    // });
-
     const firstMessage = SplitText.create('.first-message', {
-      type: 'words',
+      type: 'lines',
     });
 
-    gsap.to(firstMessage.words, {
+    gsap.to(firstMessage.lines, {
       color: 'var(--text-main)',
-      ease: 'power1.in',
       stagger: 0.2,
+      ease: 'power1.in',
       scrollTrigger: {
         trigger: '.about-me',
-        start: 'top center',
-        end: 'bottom 70%',
-        scrub: true,
+        start: 'top 65%',
+        toggleActions: 'play none none reverse',
       },
     });
 
