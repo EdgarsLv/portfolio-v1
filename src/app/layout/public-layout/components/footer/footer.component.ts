@@ -18,33 +18,24 @@ export class FooterComponent {
   private timer: any;
 
   private map!: L.Map;
-  private tileLayer: any;
-
-  private lightTile =
-    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-  private darkTile =
-    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  private tileLayer!: L.TileLayer;
 
   ngOnInit() {
     this.updateTime();
     this.timer = setInterval(() => this.updateTime(), 1000);
+
+    this.theme.themeChanged$.subscribe((theme) => {
+      const isDark = theme === 'dark-theme';
+      this.addTileLayer(isDark);
+    });
   }
 
   ngAfterViewInit(): void {
     const isDarkMode = this.theme.getCurrentTheme() === 'dark-theme';
 
-    this.map = L.map('map').setView({ lat: 56.9496, lng: 24.1052 }, 13);
+    this.map = L.map('map').setView([56.9496, 24.1052], 13);
 
-    L.tileLayer(isDarkMode ? this.darkTile : this.lightTile, {
-      attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }).addTo(this.map);
-
-    // L.marker({ lat: 56.9496, lng: 24.1052 })
-    //   .addTo(this.map)
-    //   .bindPopup('My Location')
-    //   .openPopup();
+    this.addTileLayer(isDarkMode);
 
     this.map.on('click', (e: L.LeafletMouseEvent) => {
       const lat = e.latlng.lat;
@@ -55,7 +46,6 @@ export class FooterComponent {
   }
 
   private addTileLayer(isDarkMode: boolean): void {
-    // Remove previous tile layer if it exists
     if (this.tileLayer) {
       this.map.removeLayer(this.tileLayer);
     }

@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { Subject } from 'rxjs';
+
+export type Theme = 'dark-theme' | 'light-theme';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +11,15 @@ export class ThemeService {
   private readonly light = 'light-theme';
   private readonly dark = 'dark-theme';
 
+  private themeChanged = new Subject<Theme>();
+  public themeChanged$ = this.themeChanged.asObservable();
+
   constructor() {
     this.initTheme();
   }
 
   initTheme(): void {
-    const savedTheme = localStorage.getItem(this.storageKey);
+    const savedTheme = localStorage.getItem(this.storageKey) as Theme;
     const theme = savedTheme || this.dark;
     this.setTheme(theme);
   }
@@ -28,9 +34,10 @@ export class ThemeService {
     this.setTheme(newTheme);
   }
 
-  private setTheme(theme: string): void {
+  private setTheme(theme: Theme): void {
     document.body.classList.remove(this.light, this.dark);
     document.body.classList.add(theme);
+    this.themeChanged.next(theme);
     localStorage.setItem(this.storageKey, theme);
   }
 
