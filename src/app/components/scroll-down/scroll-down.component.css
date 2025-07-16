@@ -21,7 +21,7 @@
   height: 32px;
   border-bottom: 4px solid;
   border-right: 4px solid;
-  border-color: var(--arrow-color);
+  border-color: var(--text-primary);
   transform: rotate(45deg);
   animation: arrowBounce 1.5s infinite ease-in-out;
   opacity: 0.7;
@@ -47,7 +47,7 @@
 
 .scroll-text {
   font-size: 1rem;
-  color: var(--arrow-color);
+  color: var(--text-primary);
   opacity: 0.6;
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;

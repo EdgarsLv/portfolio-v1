@@ -5,7 +5,7 @@ footer {
     height: 205px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: var(--bg-color);
+    background-color: var(--background);
     padding: 0 16px;
     margin-bottom: 16px;
     z-index: -1;
@@ -14,7 +14,7 @@ footer {
     @media (max-width: 900px) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        height: 520px;
+        height: 500px;
     }
 }
 
@@ -25,25 +25,27 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border: 1px solid #0095ff38;
     padding: 16px 0;
     overflow: hidden;
+    /* border: 1px solid;
+    border-color: var(--shadow-color); */
+    box-shadow: 0 0 10px -4px var(--shadow-color);
 }
 
 .social-links a {
-  color: var(--text-main);
+  color: var(--text-primary);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--text-main);
+  color: var(--text-primary);
   transform: translateY(-3px);
   cursor: pointer;
 }
@@ -56,15 +58,17 @@ footer {
     gap: 16px;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--text-main);
+    font-size: 1rem;
+    color: var(--text-primary);
     padding-bottom:  16px;
-    border: 1px solid #0095ff38;
+    /* border: 1px solid;
+    border-color: var(--shadow-color); */
+    box-shadow: 0 0 10px -4px var(--shadow-color);
 
     .location {
         display: flex;
         align-items: center;
-        color: var(--text-main);
+        color: var(--text-primary);
         text-decoration: none;
     }
 
@@ -81,13 +85,14 @@ footer {
 p {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--text-main);
+    font-size: 1rem;
+    color: var(--text-primary);
 }
 
 .share {
-     border: 1px solid #0095ff38;
-     /* box-shadow: 0 0 10px -4px #0095ff38; */
+     /* border: 1px solid;
+     border-color: var(--shadow-color); */
+     box-shadow: 0 0 10px -4px var(--shadow-color);
 }
 
 .map-container {

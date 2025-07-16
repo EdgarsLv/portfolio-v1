@@ -3,7 +3,7 @@ h3 {
     font-weight: 900;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--text-accent);
     margin-bottom: 1rem;
 
     span {

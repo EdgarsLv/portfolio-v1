@@ -7,7 +7,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
-    color: var(--text-color);
+    color: var(--text-accent);
     z-index: 10;
      
     backdrop-filter: blur(12px);
@@ -27,7 +27,7 @@ header {
 
 a {
     position: relative;
-    color: var(--text-main);
+    color: var(--text-primary);
     text-decoration: none;
     font-style: italic;
     cursor: pointer;
@@ -48,7 +48,7 @@ a::before {
 }
 
 a:hover {
-    color: var(--text-color);
+    color: var(--text-accent);
 }
 
 a:hover::before {

@@ -2,13 +2,13 @@ main {
     position: relative;
     min-height: calc(100vh - 60px); 
     min-height: calc(100svh - 60px); 
-    background-color: var(--bg-color);
+    background-color: var(--background);
     margin-top: 60px;
     margin-bottom: calc(205px + 32px);
-    box-shadow: 0 4px 10px -4px #0095ff38;
+    box-shadow: 0 4px 10px -4px var(--shadow-color);
 
     @media (max-width: 900px){
-        margin-bottom: calc(520px + 32px);
+        margin-bottom: calc(500px + 32px);
     }
 }
 

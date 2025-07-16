@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: calc(100svh - 60px);
-    background-color: var(--bg-color);
+    background-color: var(--background);
     padding-inline: 10%;
     padding-bottom: 64px;
 
@@ -17,7 +17,7 @@
         font-family: 'MyFont', sans-serif;
         font-size: clamp(1rem, 2vw, 22px);
         letter-spacing: clamp(0.2rem, 1vw, 0.5rem);
-        color: var(--text-main);
+        color: var(--text-primary);
         font-weight: 900;
         text-transform: uppercase;
         width: 100%;
@@ -41,7 +41,7 @@
     font-size: clamp(4.5rem, 15vw, 15rem);
     letter-spacing: clamp(0.5rem, 3vw, 2rem);
     font-weight: 400;
-    color: var(--text-color);
+    color: var(--text-accent);
     text-transform: uppercase;
     line-height: 1;
     margin-top: 0.15em;
@@ -55,7 +55,7 @@
 .about-container {
     height: 100%;
     margin-bottom: 100px;
-    background-color: var(--bg-color);
+    background-color: var(--background);
     padding-inline: 10%;
 
     .image {
@@ -65,7 +65,7 @@
 
     .content {
         display: grid;
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
         margin-bottom: 24px;
             
@@ -88,9 +88,7 @@ p {
     text-align: justify;
     line-height: 1.5;
     text-transform: uppercase;
-    /* color: var(--text-main); */
-    color: #f8f9f915;
-    /* opacity: 0; */
+    color: var(--text-low);
 }
 
 .marquee-wrapper {
@@ -123,4 +121,141 @@ p {
 .heading span {
   display: inline-block;
   transform: translateY(100%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    margin-top: 50px;
+}
+
+.box-card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    cursor: pointer;
+    animation: rotate3d 8s infinite linear;
+    animation-play-state: running;
+}
+
+.box-card:hover {
+    animation-play-state: paused;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    backface-visibility: visible;
+    border-radius: 0px;
+    background: linear-gradient(145deg, var(--background), #383838);
+    border: 2px solid #646cff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.face::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    top: -100%;
+    left: -100%;
+    transition: all 0.5s ease;
+    transform: translateZ(20px);
+}
+
+.face::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.face:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+.face:hover::after {
+    opacity: 1;
+}
+
+.front {
+    transform: translateZ(100px);
+    border-color: #646cff;
+}
+
+.back {
+    transform: translateZ(-100px) rotateY(180deg);
+    border-color: #00bcd4;
+}
+
+.right {
+    transform: translateX(100px) rotateY(90deg);
+    border-color: #4caf50;
+}
+
+.left {
+    transform: translateX(-100px) rotateY(-90deg);
+    border-color: #ff4081;
+}
+
+.top {
+    transform: translateY(-100px) rotateX(90deg);
+    border-color: #ffc107;
+}
+
+.bottom {
+    transform: translateY(100px) rotateX(-90deg);
+    border-color: #9c27b0;
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotateX(0) rotateY(0);
+    }
+    25% {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+    75% {
+        transform: rotateX(270deg) rotateY(270deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .box-card {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .front { transform: translateZ(75px); }
+    .back { transform: translateZ(-75px) rotateY(180deg); }
+    .right { transform: translateX(75px) rotateY(90deg); }
+    .left { transform: translateX(-75px) rotateY(-90deg); }
+    .top { transform: translateY(-75px) rotateX(90deg); }
+    .bottom { transform: translateY(75px) rotateX(-90deg); }
 }

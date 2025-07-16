@@ -33,7 +33,7 @@ export class ProjectsComponent {
     });
 
     gsap.to(firstMessage.words, {
-      color: 'var(--text-main)',
+      color: 'var(--text-primary)',
       ease: 'power1.in',
       stagger: 0.2,
       scrollTrigger: {
@@ -45,7 +45,7 @@ export class ProjectsComponent {
     });
 
     gsap.to(secondMessage.words, {
-      color: 'var(--text-main)',
+      color: 'var(--text-primary)',
       ease: 'power1.in',
       stagger: 0.2,
       scrollTrigger: {
@@ -57,7 +57,7 @@ export class ProjectsComponent {
     });
 
     gsap.to(thirdMessage.words, {
-      color: 'var(--text-main)',
+      color: 'var(--text-primary)',
       ease: 'power1.in',
       stagger: 0.2,
       scrollTrigger: {

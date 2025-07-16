@@ -22,26 +22,32 @@
 .light-theme {
     color-scheme: light;
 
-    --bg-color: #f5f7fa;       
-    --text-main: #1a1d23;      
-    --text-color: #0095ff; 
-    --backdrop-color: #def5fd10;
+    --background: #f5f7fa;
+    --foreground: #f5f7fa;
 
-    --arrow-color: #000;
+    --text-accent: #0095ff;
+    --text-primary: #1a1d23;
+    --text-low: #1a1d231c;
+
+    --shadow-color: #08080856;
+    --backdrop-color: #def5fd10;
 }
 
 .dark-theme {
     color-scheme: dark;
 
-    --bg-color: #1a1d23;
-    --text-color: #0095ff;
-    --text-main: #f8f9f9;
-    --backdrop-color: #242a3410;
+    --background: #1a1d23;
+    --foreground: #1a1d23;
 
-    --arrorw-color: #fff;
+    --text-accent: #fff200;
+    --text-primary: #f8f9f9;
+    --text-low: #f8f9f92a;
+    
+    --shadow-color: #0000007c;
+    --backdrop-color: #242a3410;
 }
 
 body {
-    background: var(--bg-color);
-    color: var(--text-main);
+    background: var(--background);
+    color: var(--text-primary);
 }

@@ -1,7 +1,11 @@
 a {
     display: inline-block;
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 24px;
+
+    :first-child, :last-child {
+        color: var(--text-accent);
+    }
 }

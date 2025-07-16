@@ -37,7 +37,7 @@ export class AboutComponent implements AfterViewInit {
     });
 
     gsap.to(firstMessage.lines, {
-      color: 'var(--text-main)',
+      color: 'var(--text-primary)',
       stagger: 0.2,
       ease: 'power1.in',
       scrollTrigger: {
