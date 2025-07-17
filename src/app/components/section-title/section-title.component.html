@@ -1,0 +1,11 @@
+<div class="section-header">
+  <p #topRef>{{ topText() }}</p>
+
+  <h1 #titleRef class="section-title">
+    {{ title() }}<span>{{ lastChar() }}</span>
+  </h1>
+
+  <p #bottomRef>{{ bottomText() }}</p>
+
+  <ng-content />
+</div>

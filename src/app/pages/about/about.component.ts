@@ -5,6 +5,7 @@ import { LoaderService } from '../../services/loader.service';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 import { TechIconComponent } from '../../components/tech-icon/tech-icon.component';
 import { SectionHeadingsComponent } from '../../components/section-headings/section-headings.component';
+import { SectionTitleComponent } from '../../components/section-title/section-title.component';
 
 type Icon = {
   icon: string;
@@ -13,7 +14,12 @@ type Icon = {
 
 @Component({
   selector: 'app-about',
-  imports: [ScrollDownComponent, TechIconComponent, SectionHeadingsComponent],
+  imports: [
+    ScrollDownComponent,
+    SectionTitleComponent,
+    TechIconComponent,
+    SectionHeadingsComponent,
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })

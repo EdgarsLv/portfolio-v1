@@ -4,6 +4,7 @@ import SplitText from 'gsap/SplitText';
 import { ScrollDownComponent } from '../../components/scroll-down/scroll-down.component';
 import { SectionHeadingsComponent } from '../../components/section-headings/section-headings.component';
 import { DesktopImageComponent } from './components/desktop-image/desktop-image.component';
+import { SectionTitleComponent } from '../../components/section-title/section-title.component';
 
 @Component({
   selector: 'app-projects',
@@ -11,6 +12,7 @@ import { DesktopImageComponent } from './components/desktop-image/desktop-image.
     ScrollDownComponent,
     SectionHeadingsComponent,
     DesktopImageComponent,
+    SectionTitleComponent,
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',

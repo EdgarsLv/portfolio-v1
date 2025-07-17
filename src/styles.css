@@ -12,7 +12,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Crimson Pro", serif;
+}
+
+p, a, span {
+     font-family: "Crimson Pro", serif;
 }
 
 :root {
@@ -39,7 +42,7 @@
     --background: #14161a;
     --foreground: #1a1d23;
 
-    --text-accent: #ff6f00;
+    --text-accent: #02b945;
     --text-primary: #dfdfdf;
     --text-low: #f8f9f92a;
     
