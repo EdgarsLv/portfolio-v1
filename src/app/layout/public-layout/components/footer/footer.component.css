@@ -27,8 +27,6 @@ footer {
     gap: 1rem;
     padding: 16px 0;
     overflow: hidden;
-    /* border: 1px solid;
-    border-color: var(--shadow-color); */
     box-shadow: 0 0 10px -4px var(--shadow-color);
 }
 
@@ -61,8 +59,6 @@ footer {
     font-size: 1rem;
     color: var(--text-primary);
     padding-bottom:  16px;
-    /* border: 1px solid;
-    border-color: var(--shadow-color); */
     box-shadow: 0 0 10px -4px var(--shadow-color);
 
     .location {
@@ -90,8 +86,6 @@ p {
 }
 
 .share {
-     /* border: 1px solid;
-     border-color: var(--shadow-color); */
      box-shadow: 0 0 10px -4px var(--shadow-color);
 }
 
@@ -100,4 +94,16 @@ p {
   width: 100%;
   border-radius: 0px;
   z-index: 0;
+}
+
+.social-buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 16px 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px -4px var(--shadow-color);
 }

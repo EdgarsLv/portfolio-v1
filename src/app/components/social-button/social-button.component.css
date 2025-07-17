@@ -1,0 +1,30 @@
+.test-button {
+  margin-left: 16px;
+  border-radius: 4px;
+  background-color: var(--text-primary);
+  display: inline-block;
+  width: 200px;
+
+
+  a {
+    display: flex;
+    align-items: center;
+    color: var(--background);
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 8px;
+    padding-block: 3px;
+
+    span {
+      margin-left: auto;
+      background-color: var(--background);
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-primary);
+      width: 150px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+}

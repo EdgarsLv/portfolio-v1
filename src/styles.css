@@ -36,15 +36,15 @@
 .dark-theme {
     color-scheme: dark;
 
-    --background: #1a1d23;
+    --background: #14161a;
     --foreground: #1a1d23;
 
-    --text-accent: #fff200;
-    --text-primary: #f8f9f9;
+    --text-accent: #ff6f00;
+    --text-primary: #dfdfdf;
     --text-low: #f8f9f92a;
     
-    --shadow-color: #0000007c;
-    --backdrop-color: #242a3410;
+    --shadow-color: #00000095;
+    --backdrop-color: #14161a3a;
 }
 
 body {

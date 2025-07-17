@@ -55,3 +55,9 @@ a:hover::before {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
+
+@media (max-width: 900px) {
+  .home {
+    display: none;
+  }
+}

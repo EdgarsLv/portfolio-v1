@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import * as L from 'leaflet';
 import { ThemeService } from '../../../../services/theme.service';
+// import { SocialButtonComponent } from '../../../../components/social-button/social-button.component';
 
 @Component({
   selector: 'app-footer',
