@@ -13,6 +13,8 @@ export class LoaderScreenComponent implements AfterViewInit {
   @ViewChild('braceRight') braceRight!: ElementRef;
   @ViewChild('loader') loader!: ElementRef;
   @ViewChild('logoWrapper') logoWrapper!: ElementRef;
+  @ViewChild('software') software!: ElementRef;
+  @ViewChild('developer') developer!: ElementRef;
 
   ngAfterViewInit() {
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
@@ -47,6 +49,16 @@ export class LoaderScreenComponent implements AfterViewInit {
         '<'
       )
 
+      .to(
+        [this.software.nativeElement, this.developer.nativeElement],
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power1.inOut',
+        },
+        'startScale'
+      )
+
       // Move + scale logoWrapper to top-left
       .to(
         this.logoWrapper.nativeElement,
@@ -58,7 +70,7 @@ export class LoaderScreenComponent implements AfterViewInit {
           duration: 1,
           ease: 'power3.inOut',
         },
-        '+=0.4'
+        'startScale'
       )
 
       // Fade out loader background
