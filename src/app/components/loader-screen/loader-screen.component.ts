@@ -12,16 +12,18 @@ export class LoaderScreenComponent implements AfterViewInit {
   @ViewChild('braceLeft') braceLeft!: ElementRef;
   @ViewChild('braceRight') braceRight!: ElementRef;
   @ViewChild('loader') loader!: ElementRef;
+  @ViewChild('logoWrapper') logoWrapper!: ElementRef;
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    // Set initial positions
+    // Set up initial positions
     gsap.set([this.braceLeft.nativeElement, this.braceRight.nativeElement], {
       opacity: 0,
       x: (i: number) => (i === 0 ? -200 : 200),
     });
 
+    // Scramble EP
     tl.to(this.ep.nativeElement, {
       duration: 2,
       scrambleText: {
@@ -33,38 +35,41 @@ export class LoaderScreenComponent implements AfterViewInit {
       ease: 'power1.inOut',
     })
 
-      // Braces fly in
+      // Braces slide in
       .to(
         this.braceLeft.nativeElement,
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-        },
-        '+=0.3'
+        { x: 0, opacity: 1, duration: 0.5 },
+        '+=0.2'
       )
       .to(
         this.braceRight.nativeElement,
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-        },
+        { x: 0, opacity: 1, duration: 0.5 },
         '<'
       )
 
-      // Background fades out
+      // Move + scale logoWrapper to top-left
+      .to(
+        this.logoWrapper.nativeElement,
+        {
+          scale: 0.09,
+          opacity: 0,
+          x: -window.innerWidth / 2 + 51,
+          y: -window.innerHeight / 2 + 31,
+          duration: 1,
+          ease: 'power3.inOut',
+        },
+        '+=0.4'
+      )
+
+      // Fade out loader background
       .to(
         this.loader.nativeElement,
         {
           opacity: 0,
           pointerEvents: 'none',
-          duration: 1,
-          onComplete: () => {
-            // Optional: remove loader from DOM or set a flag
-          },
+          duration: 0.8,
         },
-        '+=0.5'
+        '-=0.5'
       );
   }
 }

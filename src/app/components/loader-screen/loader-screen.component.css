@@ -7,28 +7,21 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
+  pointer-events: all;
   transition: opacity 0.5s ease;
-  overflow: hidden;
 
-  div {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--text-primary);
+  .logo-wrapper {
     font-weight: 600;
     font-size: clamp(12rem, 20vw, 17rem);
+    color: var(--text-primary);
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
 
     span:first-child,
     span:last-child {
       color: var(--text-accent);
-      display: inline-block;
-    }
-
-    span:nth-child(2){
-        margin-inline: 16px;
-    }
-
-    span {
-      display: inline-block;
     }
   }
 }
